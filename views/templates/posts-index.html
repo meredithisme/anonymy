@@ -1,0 +1,60 @@
+<section id="banner">
+        <h2>Anonymy</h2>
+        <p>Online photo sharing has never been easier.</p>
+        <!-- <ul class="actions">
+          <li>
+            <a href="#" class="button big">Learn More</a>
+          </li>
+        </ul> -->
+      </section>
+      <br>
+      <br>
+    <!-- One -->
+      <section id="one" class="">
+        <div class="container">
+        <h2 style="text-align: center">Add Photo Here</h2>
+<form ng-submit="createPost()">
+  <div class='form-group'>
+    <input class='form-control' type="text" placeholder="Name of city"ng-model="post.title" required autofocus>
+    <input class='form-control' type="text" placeholder="Image URL" ng-model="post.img_url" required autofocus>
+    <input class='form-control' type="text" placeholder="Location" ng-model="post.location" required autofocus>
+    <input class='form-control' type="text" placeholder="Description" ng-model="post.caption" required autofocus>
+
+    </div>
+    <p align="center">
+  <button type="submit" class='btn btn-default'>Save</button>
+  </p>
+</form>
+
+
+<section id="two" class="wrapper style2 align-center">
+<div class="row">
+
+
+
+          <div ng-repeat="post in posts" class='feature 6u 12u$(small)'>
+            <h2>{{post.title}}</h2>
+            <img class="image fit" ng-src="{{post.img_url}}" class="img-responsive">
+            <h3>{{post.location}}</h3>
+            <h4>{{post.caption}}</h4>
+
+            <form ng-submit="createComment()">
+                  <input type="text" class="form-control" name="name"placeholder="Write your Name" ng-model="comment.author">
+                  <label for="comments"></label>
+                  <input type="text" class="form-control" name="comments" rows="3"placeholder="Write your Comments "ng-model="comment.body"</textarea>
+                  <br>
+                  <button type="submit" class='btn btn-default'>Save</button>
+</form>
+ 
+                  <h3>{{comment.author}}</h3>
+                  <h3>{{comment.body}}</h3>
+                  
+
+
+              <a href="#" class='pull-right' ng-click="deletePost(post, $index)">
+              <i class="fa fa-trash-o"></i>
+            </a>
+        </ul>
+      </div>
+    </section>
+ 
